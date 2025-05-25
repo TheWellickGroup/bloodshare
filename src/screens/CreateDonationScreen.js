@@ -1,14 +1,21 @@
-import React, {useState} from "react";
-import {Text, TouchableOpacity, View} from "react-native";
-import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import {ActivityIndicator, Button, HelperText, Snackbar, TextInput, Title,} from "react-native-paper";
-import styles from "../utils/styles";
-import {DateTimePickerAndroid} from "@react-native-community/datetimepicker";
+import { DateTimePickerAndroid } from "@react-native-community/datetimepicker";
 import axios from "axios";
-import {url} from "../utils/api";
-import {getValue} from "../utils/auth";
-import {getError} from "../utils/error";
+import React, { useState } from "react";
+import { Text, TouchableOpacity, View } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import {
+  ActivityIndicator,
+  Button,
+  HelperText,
+  Snackbar,
+  TextInput,
+  Title,
+} from "react-native-paper";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { url } from "../utils/api";
+import { getValue } from "../utils/auth";
+import { getError } from "../utils/error";
+import styles from "../utils/styles";
 
 export default function CreateDonationScreen({ navigation }) {
   const [visible, setVisible] = React.useState(false);

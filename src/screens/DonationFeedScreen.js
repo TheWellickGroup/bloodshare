@@ -1,14 +1,13 @@
 import axios from "axios";
-import React, {  useState } from "react";
-import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
+import moment from "moment";
+import React, { useState } from "react";
 import {
-  StyleSheet,
-  Platform,
-  ScrollView,
-  SafeAreaView,
-  View,
   Image,
   RefreshControl,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  View,
 } from "react-native";
 import {
   AnimatedFAB,
@@ -19,10 +18,10 @@ import {
   Snackbar,
   Title,
 } from "react-native-paper";
+import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 import { url } from "../utils/api";
 import { getValue } from "../utils/auth";
 import { getError } from "../utils/error";
-import moment from "moment";
 const LeftContent = (props) => <Avatar.Icon {...props} icon="account" />;
 
 export default function DonationFeedScreen({
@@ -67,7 +66,7 @@ export default function DonationFeedScreen({
   };
   React.useEffect(() => {
     getFeeds().catch((err) => {
-       setError(getError(err));
+      setError(getError(err));
     });
   }, [error]);
   const going = async (id) => {

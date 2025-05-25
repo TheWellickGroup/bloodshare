@@ -1,9 +1,10 @@
+import axios from "axios";
+import moment from "moment";
 import React from "react";
-import { Image, StatusBar, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import {
   Avatar,
   Button,
-  Card,
   Chip,
   HelperText,
   List,
@@ -11,16 +12,14 @@ import {
   Snackbar,
   Title,
 } from "react-native-paper";
-import moment from "moment";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import axios from "axios";
+import Fontisto from "react-native-vector-icons/Fontisto";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import Octicons from "react-native-vector-icons/Octicons";
 import { url } from "../utils/api";
 import { getValue } from "../utils/auth";
 import { getError } from "../utils/error";
-import Octicons from "react-native-vector-icons/Octicons";
-import Ionicons from "react-native-vector-icons/Ionicons";
-import Fontisto from "react-native-vector-icons/Fontisto";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default function BloodCardScreen({ navigation }) {
   const [visible, setVisible] = React.useState(false);

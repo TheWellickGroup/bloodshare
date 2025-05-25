@@ -1,27 +1,27 @@
 import axios from "axios";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import Fontisto from "react-native-vector-icons/Fontisto";
-import React, {  useState } from "react";
+import * as Linking from "expo-linking";
+import * as Location from "expo-location";
+import React, { useState } from "react";
 import {
-  StyleSheet,
-  ScrollView,
-  SafeAreaView,
-  View,
   Image,
   RefreshControl,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  View,
 } from "react-native";
 import {
   AnimatedFAB,
-  Paragraph,
   Avatar,
   Button,
   Card,
+  Paragraph,
   Snackbar,
   Title,
 } from "react-native-paper";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Fontisto from "react-native-vector-icons/Fontisto";
 import Octicons from "react-native-vector-icons/Octicons";
-import * as Linking from "expo-linking";
-import * as Location from "expo-location";
 import { url } from "../utils/api";
 import { getValue } from "../utils/auth";
 import { getError } from "../utils/error";

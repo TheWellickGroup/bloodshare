@@ -1,22 +1,23 @@
 import axios from "axios";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import Octicons from "react-native-vector-icons/Octicons";
-import Fontisto from "react-native-vector-icons/Fontisto";
-import React, {  useState } from "react";
-import {
-  StyleSheet,
-  SafeAreaView,
-  View,
-  Image,
-} from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
-import { AnimatedFAB, Paragraph, Snackbar, Title } from "react-native-paper";
-import { Avatar, Button, Card } from "react-native-paper";
 import * as Linking from "expo-linking";
+import React, { useState } from "react";
+import { Image, SafeAreaView, StyleSheet, View } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import {
+  AnimatedFAB,
+  Avatar,
+  Button,
+  Card,
+  Paragraph,
+  Snackbar,
+  Title,
+} from "react-native-paper";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Fontisto from "react-native-vector-icons/Fontisto";
+import Octicons from "react-native-vector-icons/Octicons";
 import { url } from "../utils/api";
 import { getValue } from "../utils/auth";
-import {getError} from "../utils/error";
-
+import { getError } from "../utils/error";
 
 export default function MyRequestsScreen({
   navigation,
@@ -186,8 +187,7 @@ export default function MyRequestsScreen({
         onDismiss={onDismissSnackBar}
         action={{
           label: "ok",
-          onPress: () => {
-          },
+          onPress: () => {},
         }}
       >
         {error}

@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import * as ImagePicker from "expo-image-picker";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import {  Text, TouchableOpacity, View } from "react-native";
-import { Picker } from "@react-native-picker/picker";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { DateTimePickerAndroid } from "@react-native-community/datetimepicker";
-import styles from "../utils/styles";
+import { Picker } from "@react-native-picker/picker";
+import axios from "axios";
+import * as ImagePicker from "expo-image-picker";
+import React, { useState } from "react";
+import { Text, TouchableOpacity, View } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import {
   ActivityIndicator,
   Avatar,
@@ -14,10 +13,11 @@ import {
   Snackbar,
   TextInput,
 } from "react-native-paper";
-import axios from "axios";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { url } from "../utils/api";
 import { getValue } from "../utils/auth";
 import { getError } from "../utils/error";
+import styles from "../utils/styles";
 
 export default function EditProfile({ navigation }) {
   const [visible, setVisible] = React.useState(false);
@@ -143,8 +143,7 @@ export default function EditProfile({ navigation }) {
         style={{ flex: 1, width: "100%" }}
         keyboardShouldPersistTaps="always"
       >
-        <View style={{ flex: 1, marginLeft: 30 }}>
-        </View>
+        <View style={{ flex: 1, marginLeft: 30 }}></View>
         <View
           style={{
             marginLeft: 30,

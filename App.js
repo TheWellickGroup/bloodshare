@@ -1,41 +1,41 @@
-import "react-native-gesture-handler";
-import React, { useCallback, useEffect, useState } from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import React, { useState } from "react";
+import "react-native-gesture-handler";
+import {
+  MD3LightTheme as DefaultTheme,
+  Provider as PaperProvider,
+  useTheme,
+} from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Octicons from "react-native-vector-icons/Octicons";
-import { NavigationContainer, TabActions } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import {
-  useTheme,
-  Provider as PaperProvider,
-  MD3LightTheme as DefaultTheme,
-} from "react-native-paper";
 
+import { decode, encode } from "base-64";
 import * as SecureStore from "expo-secure-store";
 import {
-  LoginScreen,
-  HomeScreen,
-  RegistrationScreen,
-  DonationScreen,
-  DonationFeedScreen,
-  VerifyScreen,
-  ThankYouScreen,
+  AcceptDonationScreen,
   BloodCardScreen,
-  CreateFeedScreen,
-  CreateDonationScreen,
   CompleteProfileScreen,
-  ForgotPasswordScreen,
   ConfirmScreen,
-  SettingsScreen,
+  CreateDonationScreen,
+  CreateFeedScreen,
+  CreateRequestScreen,
+  DonationFeedScreen,
+  DonationScreen,
+  EditProfile,
+  ForgotPasswordScreen,
+  HomeScreen,
+  LoginScreen,
+  MyRequestsScreen,
+  RegistrationScreen,
   RequestsScreen,
   ResetPasswordScreen,
-  CreateRequestScreen,
-  EditProfile,
-  MyRequestsScreen,
-  AcceptDonationScreen,
+  SettingsScreen,
   SingleRequestScreen,
+  ThankYouScreen,
+  VerifyScreen,
 } from "./src/screens";
-import { decode, encode } from "base-64";
 
 if (!global.btoa) {
   global.btoa = encode;

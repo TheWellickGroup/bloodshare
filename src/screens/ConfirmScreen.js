@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { Image, Text, View } from "react-native";
-import styles from "../utils/styles";
-import { Button, HelperText, Snackbar } from "react-native-paper";
-import { url } from "../utils/api";
-import { getError } from "../utils/error";
 import axios from "axios";
+import React from "react";
+import { Image, Text, View } from "react-native";
+import { Button, HelperText, Snackbar } from "react-native-paper";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { url } from "../utils/api";
 import getValue from "../utils/auth";
+import { getError } from "../utils/error";
+import styles from "../utils/styles";
 
 export default function ConfirmScreen({ route, navigation }) {
   const [visibo, setVisibo] = React.useState(false);

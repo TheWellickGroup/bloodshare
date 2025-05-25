@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Octicons from "react-native-vector-icons/Octicons";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import Fontisto from "react-native-vector-icons/Fontisto";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import axios from "axios";
+import * as Linking from "expo-linking";
+import * as Location from "expo-location";
+import * as NavigationBar from "expo-navigation-bar";
+import React, { useState } from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -19,13 +19,13 @@ import {
   Paragraph,
   Snackbar,
 } from "react-native-paper";
-import axios from "axios";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Fontisto from "react-native-vector-icons/Fontisto";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import Octicons from "react-native-vector-icons/Octicons";
+import Navbar from "../components/Navbar";
 import { url } from "../utils/api";
 import { getValue } from "../utils/auth";
-import Navbar from "../components/Navbar";
-import * as Linking from "expo-linking";
-import * as Location from "expo-location";
-import * as NavigationBar from "expo-navigation-bar";
 import { getError } from "../utils/error";
 
 export default function HomeScreen({ navigation }) {

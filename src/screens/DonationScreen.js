@@ -1,11 +1,10 @@
 import axios from "axios";
+import moment from "moment";
 import React from "react";
 import {
   Image,
-  Platform,
   SafeAreaView,
   ScrollView,
-  StatusBar,
   StyleSheet,
   View,
 } from "react-native";
@@ -13,7 +12,6 @@ import { AnimatedFAB, Button, List, Snackbar, Title } from "react-native-paper";
 import { url } from "../utils/api";
 import { getValue } from "../utils/auth";
 import { getError } from "../utils/error";
-import moment from "moment";
 export default function DonationScreen({
   navigation,
   visible,

@@ -1,7 +1,6 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { Card, Paragraph, Title, Avatar, Button } from "react-native-paper";
 import * as Linking from "expo-linking";
+import { StyleSheet, Text, View } from "react-native";
+import { Avatar, Button, Card, Paragraph, Title } from "react-native-paper";
 
 export default function SingleRequestScreen({ navigation, route }) {
   const { req } = route.params;

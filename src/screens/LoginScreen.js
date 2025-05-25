@@ -1,14 +1,14 @@
+import axios from "axios";
+import * as SecureStore from "expo-secure-store";
 import React, { useEffect, useState } from "react";
 import { Image, StatusBar, Text, TouchableOpacity, View } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import { ActivityIndicator, Snackbar, TextInput } from "react-native-paper";
-import styles from "../utils/styles";
-import axios from "axios";
-import { url } from "../utils/api";
-import { getError } from "../utils/error";
-import { getValue } from "../utils/auth";
-import * as SecureStore from "expo-secure-store";
 import Onboarding from "react-native-onboarding-swiper";
+import { ActivityIndicator, Snackbar, TextInput } from "react-native-paper";
+import { url } from "../utils/api";
+import { getValue } from "../utils/auth";
+import { getError } from "../utils/error";
+import styles from "../utils/styles";
 
 export default function LoginScreen({ navigation }) {
   const [visible, setVisible] = React.useState(false);

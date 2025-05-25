@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-import * as ImagePicker from "expo-image-picker";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { Text, TouchableOpacity, View } from "react-native";
-import { Picker } from "@react-native-picker/picker";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { DateTimePickerAndroid } from "@react-native-community/datetimepicker";
-import styles from "../utils/styles";
+import { Picker } from "@react-native-picker/picker";
+import * as ImagePicker from "expo-image-picker";
+import React, { useState } from "react";
+import { Text, TouchableOpacity, View } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import {
   ActivityIndicator,
   Avatar,
@@ -15,9 +13,11 @@ import {
   Snackbar,
   TextInput,
 } from "react-native-paper";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import styles from "../utils/styles";
 
-import * as SecureStore from "expo-secure-store";
 import axios from "axios";
+import * as SecureStore from "expo-secure-store";
 import { url } from "../utils/api";
 import { getValue } from "../utils/auth";
 import { getError } from "../utils/error";
@@ -256,10 +256,7 @@ export default function CompleteProfileScreen({ navigation }) {
             value="B_NEGATIVE"
             style={{ fontWeight: "bold" }}
           />
-          <Picker.Item
-            label="Blood Group"
-            value=""
-          />
+          <Picker.Item label="Blood Group" value="" />
         </Picker>
         <View style={{ paddingBottom: 10 }}>
           {loading ? (

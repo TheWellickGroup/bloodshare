@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { Image,View } from "react-native";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import axios from "axios";
 import * as ImagePicker from "expo-image-picker";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import styles from "../utils/styles";
+import React, { useState } from "react";
+import { Image, View } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import {
   ActivityIndicator,
   Button,
@@ -13,10 +12,11 @@ import {
   TextInput,
   Title,
 } from "react-native-paper";
-import axios from "axios";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { url } from "../utils/api";
+import { getValue } from "../utils/auth";
 import { getError } from "../utils/error";
-import { getValue, save } from "../utils/auth";
+import styles from "../utils/styles";
 
 export default function CreateFeedScreen({ navigation }) {
   const [description, setDesc] = useState("");
@@ -45,10 +45,10 @@ export default function CreateFeedScreen({ navigation }) {
     const token = await getValue("token");
     let localUri = image;
     const formData = new FormData();
-    if(localUri) {
-       let filename = localUri.split("/").pop();
-       let match = /\.(\w+)$/.exec(filename);
-       let type = match ? `image/${match[1]}` : `image`;
+    if (localUri) {
+      let filename = localUri.split("/").pop();
+      let match = /\.(\w+)$/.exec(filename);
+      let type = match ? `image/${match[1]}` : `image`;
       formData.append("media", { uri: localUri, name: filename, type });
     }
     formData.append("description", description);

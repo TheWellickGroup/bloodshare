@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Image,View } from "react-native";
+import { Image, View } from "react-native";
 import { ActivityIndicator, Button, Snackbar, Title } from "react-native-paper";
 import { url } from "../utils/api";
 import { getValue } from "../utils/auth";

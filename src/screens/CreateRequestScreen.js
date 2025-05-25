@@ -1,31 +1,27 @@
-import React, { useState } from "react";
-import * as Location from "expo-location";
-import { Text, View } from "react-native";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import styles from "../utils/styles";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { DateTimePickerAndroid } from "@react-native-community/datetimepicker";
 import Slider from "@react-native-community/slider";
+import axios from "axios";
+import * as Location from "expo-location";
+import React, { useState } from "react";
+import { Text, View } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import {
   ActivityIndicator,
   Button,
-  Checkbox,
   Chip,
   HelperText,
   Modal,
   Paragraph,
   Portal,
-  ProgressBar,
-  Provider,
   RadioButton,
   Snackbar,
   TextInput,
-  Title,
 } from "react-native-paper";
-import axios from "axios";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { url } from "../utils/api";
-import { getError } from "../utils/error";
 import { getValue, save } from "../utils/auth";
+import { getError } from "../utils/error";
+import styles from "../utils/styles";
 
 export default function CreateRequestScreen({ navigation }) {
   const [loading, setLoading] = useState(false);
@@ -46,7 +42,7 @@ export default function CreateRequestScreen({ navigation }) {
   const [visible, setVisible] = React.useState(false);
   const showModal = () => setVisible(true);
   const hideModal = () => setVisible(false);
-  const containerStyle = { backgroundColor: "white", padding: 20 , margin: 10};
+  const containerStyle = { backgroundColor: "white", padding: 20, margin: 10 };
   const [mod, setMod] = useState("outlined");
   const [mod_one, setModOne] = useState("outlined");
   const det = date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
@@ -138,7 +134,7 @@ export default function CreateRequestScreen({ navigation }) {
             Blood group: <Text style={styles.primary}>{bloodGroup}</Text>
           </Paragraph>
         </View>
-        <Portal >
+        <Portal>
           <Modal
             visible={visible}
             onDismiss={hideModal}
@@ -265,7 +261,7 @@ export default function CreateRequestScreen({ navigation }) {
                 }}
               >
                 <Text>Self</Text>
-                <RadioButton value="SELF"/>
+                <RadioButton value="SELF" />
                 <Text>Others</Text>
                 <RadioButton value="OTHERS" />
               </View>
@@ -353,7 +349,7 @@ export default function CreateRequestScreen({ navigation }) {
           </Button>
           <Button mode={mod_one} onPress={showDatepicker}>
             <MaterialCommunityIcons name="calendar" size={16} />
-           {show ? det : "upcoming" } 
+            {show ? det : "upcoming"}
           </Button>
         </View>
         <View style={styles.input}>

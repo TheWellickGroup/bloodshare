@@ -1,7 +1,6 @@
-import React from "react";
 import * as SecureStore from "expo-secure-store";
-import { StyleSheet, View, Text } from "react-native";
-import { getValue } from "../utils/auth";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 import {
   Button,
   Card,
@@ -11,7 +10,8 @@ import {
   Switch,
   Title,
 } from "react-native-paper";
-import {getError} from "../utils/error";
+import { getValue } from "../utils/auth";
+import { getError } from "../utils/error";
 
 export default function SettingsScreen({ navigation }) {
   const [value, setValue] = React.useState("");
