@@ -4,4 +4,7 @@ module.exports = {
   extra: {
     apiUrl: "https://beta-bloodshare-ipyb7v5ita-uc.a.run.app",
   },
+  android: {
+    package: "com.wellickgroup.bloodshare",
+  },
 };
